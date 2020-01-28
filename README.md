@@ -8,7 +8,7 @@ Pulumi infra as code demo
 > - [Configure Pulumi](https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/)
 
 > Pulumi commands :
-> - pulumi preview : check what pulumi state
+> - pulumi preview : check pulumi state
 > - pulumi up : create ressources
 > - pulumi destroy : destroy ressources
 
