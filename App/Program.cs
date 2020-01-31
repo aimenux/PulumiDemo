@@ -64,7 +64,7 @@ namespace App
                     EndIpAddress = currentIpAddress
                 });
 
-                // Export the connection string for the storage account
+                // Export outputs to console/dashboard
                 return new Dictionary<string, object>
                 {
                     { "resourceGroupName", resourceGroup.Name },
