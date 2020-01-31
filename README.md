@@ -12,4 +12,4 @@ Pulumi infra as code demo
 > - pulumi up : create ressources
 > - pulumi destroy : destroy ressources
 
-**`Tools`** : vs19, net core 3.0, pulumi 1.12 alpha
+**`Tools`** : vs19, net core 3.0, pulumi (beta version)
