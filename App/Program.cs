@@ -15,12 +15,15 @@ namespace App
     {
         public static Task<int> Main()
         {
+            var tags = new InputMap<string> {{"Owner", "PulumiDemo"}};
+
             return Deployment.RunAsync(() =>
             {
                 // Create an Azure Resource Group
                 var resourceGroup = new ResourceGroup("resourceGroup", new ResourceGroupArgs
                 {
-                    Location = "westeurope"
+                    Location = "westeurope",
+                    Tags = tags
                 });
 
                 // Create an Azure Storage Account
@@ -28,7 +31,8 @@ namespace App
                 {
                     ResourceGroupName = resourceGroup.Name,
                     AccountReplicationType = "LRS",
-                    AccountTier = "Standard"
+                    AccountTier = "Standard",
+                    Tags = tags
                 });
 
                 // Create an Azure Sql Server
@@ -37,7 +41,8 @@ namespace App
                     AdministratorLogin = "AdminLoginDemo1234",
                     AdministratorLoginPassword = "AdminPasswordDemo1234",
                     ResourceGroupName = resourceGroup.Name,
-                    Version = "12.0"
+                    Version = "12.0",
+                    Tags = tags
                 });
 
                 // Create an Azure Sql Database
@@ -45,7 +50,8 @@ namespace App
                 {
                     ResourceGroupName = resourceGroup.Name,
                     ServerName = sqlServer.Name,
-                    Edition = "Basic"
+                    Edition = "Basic",
+                    Tags = tags
                 });
 
                 // Create an Azure Firewall Rule
